@@ -1,14 +1,11 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Job extends AbstractEntity{
+public class Job extends AbstractEntity {
 
     @ManyToOne
     @JoinColumn
@@ -31,17 +28,15 @@ public class Job extends AbstractEntity{
 
 
     public Employer getEmployer() {
-
         return employer;
     }
 
     public void setEmployer(Employer employer) {
-
         this.employer = employer;
     }
 
-    public List<Skill> getSkills() {
 
+    public List<Skill> getSkills() {
         return skills;
     }
 
@@ -50,4 +45,6 @@ public class Job extends AbstractEntity{
     }
 
 }
+
+
 
