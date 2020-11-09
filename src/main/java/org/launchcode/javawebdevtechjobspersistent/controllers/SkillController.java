@@ -20,7 +20,6 @@ public class SkillController {
     private SkillRepository skillRepository;
 
 
-
     @GetMapping("add")
     public String displayAddSkillForm(Model model) {
         model.addAttribute(new Skill());

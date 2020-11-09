@@ -56,7 +56,6 @@ public class HomeController {
             model.addAttribute("title", "Add Job");
             model.addAttribute("employers", employerRepository.findAll());
             model.addAttribute("skill", skillRepository.findAll());
-
             return "add";
 
         }
@@ -72,7 +71,7 @@ public class HomeController {
         newJob.setSkills(skillObjs);
         jobRepository.save(newJob);
 
-        return "redirect";
+        return "redirect:";
 
     }
 
@@ -81,9 +80,10 @@ public class HomeController {
         Optional<Job> optJob = jobRepository.findById(jobId);
         if (optJob.isPresent()) {
             Job job = optJob.get();
+            model.addAttribute("job", job);
             return "view";
         }
 
-        return "redirect:.../";
+        return "redirect:../";
     }
 }
