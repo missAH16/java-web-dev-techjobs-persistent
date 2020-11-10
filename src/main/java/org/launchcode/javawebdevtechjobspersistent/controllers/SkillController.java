@@ -48,7 +48,7 @@ public class SkillController {
 
         } else {
 
-            return "redirect:../";
+            return "redirect:/";
         }
     }
 }
